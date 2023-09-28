@@ -60,13 +60,13 @@ def generate_random_image(file_path):
     bmp_data = header + image_data
 
     # Save the BMP data to a file
-    with open(file_name, "wb") as bmp_file:
+    with open(file_path, "wb") as bmp_file:
         bmp_file.write(bmp_data)
 
 
 if __name__ == "__main__":
     os.mkdir("generated_images")
-    for i in tqdm(range(1, 501)):
+    for i in tqdm(range(1, 10)):
         file_name = "image_" + str(i) + ".jpg"
         file_path = os.path.join("generated_images", file_name)
         generate_random_image(file_path)
